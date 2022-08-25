@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20CS023 Jayraj Karelia</title>
+    <script>
+	  //creating class and defining it to var
+        var Student = class {
+		//creaeting constructor to set values
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+
+                Object.defineProperties(this, {
+                    fullname: {
+				//using set method to set first and lastname
+                        set: function (text) {
+                            const parts = text.split(' ');
+                            this.firstName = parts[0];
+                            this.lastName = parts[1];
+                        },
+				//get method to return the name
+                        get: function () {
+                            return this.firstName + ' ' + this.lastName
+                        }
+                    }
+                });
+            }
+        }
+	  //creating an instance of class
+        var Student1 = new Student('Kishan','Prajapati')	
+	  //calling instance in console
+        console.log(Student1)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
